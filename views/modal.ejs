@@ -23,7 +23,7 @@
                   </div>
                 </div>
                 <div class="col-md-10 offset-md-1">
-                  <form id="request" class="main_form" method="POST" action="/photos">
+                  <form id="request" class="main_form" method="POST" action="/photos" enctype="multipart/form-data">
                     <div class="row">
                       <div class="col-md-12">
                         <input class="form_control" placeholder="Name" type="text" name="name">
@@ -34,7 +34,7 @@
                       </div>
 
                       <div style="margin-bottom: 20px ;" class="col-md-12">
-                        <input type="file" class="form-control-file">
+                        <input type="file" name="image" class="form-control-file">
                       </div>
 
                       <div class="col-md-12">
