@@ -5,5 +5,7 @@ const router = Express.Router();
 
 router.route("/").post(photoController.createPhoto).get(photoController.getAllPhotos)
 router.route("/:id").get(photoController.getAPhoto)
+router.route("/:id").delete(photoController.deletePhoto)
+router.route("/:id/modalForUpdate").put(photoController.updatePhoto)
 
 export default router;

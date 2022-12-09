@@ -1,3 +1,5 @@
+import photo from "../models/photoModel.js";
+
 const getIndexPage = (req, res) => {
   res.render("index", {
     link: "index",
@@ -31,7 +33,15 @@ const getLogout = (req, res) => {
 
 const getModalPage = (req, res) => {
   res.render("modal" , {
-    link:"modal"
+    link:"modal",
+    photo
+  });
+};
+
+const getModalPageForUpdate = (req, res) => {
+  res.render("modalForUpdate" , {
+    link:"modalForUpdate",
+    photo
   });
 };
 
@@ -42,4 +52,5 @@ export {
   getLoginPage,
   getLogout,
   getModalPage,
+  getModalPageForUpdate
 };

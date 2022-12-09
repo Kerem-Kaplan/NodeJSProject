@@ -59,13 +59,11 @@
   </div>
   <!-- end customers  -->
 
-  <%if(photos > 0) { %>
   <div class="gallery">
     <div class="container_with">
       <div class="row">
         <div class="col-md-12">
           <div class="titlepage text_align_center">
-            
             <h2>My Photos</h2>
           </div>
         </div>
@@ -96,8 +94,6 @@
       </div>
     </div>
   </div>
-  <%}%> 
-
 
   <%if(user.followers.length > 0) { %>
   <div class="team">
@@ -145,9 +141,7 @@
       </div>
     </div>
   </div>
-  <%}%> 
-  
-  <%if(user.followings.length > 0) { %>
+  <%}%> <%if(user.followings.length > 0) { %>
   <div class="team">
     <div class="container_with">
       <div class="row">

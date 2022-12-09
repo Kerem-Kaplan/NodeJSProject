@@ -20,10 +20,14 @@ const photoSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "User",
   },
-  url:{
-    type:String,
-    required:true
-  }
+  url: {
+    type: String,
+    required: true,
+  },
+
+  image_id: {
+    type: String,
+  },
 });
 
 const Photo = mongoose.model("Photo", photoSchema);
