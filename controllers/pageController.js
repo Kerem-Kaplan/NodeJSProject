@@ -1,9 +1,19 @@
 import photo from "../models/photoModel.js";
-import nodeMailer from "nodemailer"
+import nodeMailer from "nodemailer";
+import User from "../models/userModel.js"
 
-const getIndexPage = (req, res) => {
+const getIndexPage = async (req, res) => {
+  const photos = await photo.find().sort({uploadedAd:-1}).limit(6)
+
+const numOfUser=await User.countDocuments({})
+
+const numOfPhoto=await photo.countDocuments({})
+
   res.render("index", {
     link: "index",
+    photos,
+    numOfUser,
+    numOfPhoto
   });
 };
 
@@ -192,8 +202,8 @@ const sendMail = async (req, res) => {
     });
 
     res.status(200).json({
-      succeed:true
-    })
+      succeed: true,
+    });
   } catch (error) {
     res.status(500).json({
       succeed: false,
@@ -225,5 +235,5 @@ export {
   getModalPage,
   getModalPageForUpdate,
   getContactPage,
-  sendMail
+  sendMail,
 };
